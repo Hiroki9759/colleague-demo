@@ -4,21 +4,14 @@ import streamlit as st
 import langchain
 from langchain.callbacks import get_openai_callback
 from langchain.chat_models import AzureChatOpenAI
+from streamlit_chat import message
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 langchain.verbose = False
 openai.api_type = "azure"
 openai.api_base = "https://colleague-demo-model.openai.azure.com/"
 openai.api_version = "2023-03-15-preview"
-openai.api_key = os.getenv("OPENAI_API_KEY")    
-    
-import streamlit as st
-from streamlit_chat import message
-from langchain.schema import (
-    SystemMessage,
-    HumanMessage,
-    AIMessage
-)
-from langchain.callbacks import get_openai_callback
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
