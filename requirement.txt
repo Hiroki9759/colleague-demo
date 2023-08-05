@@ -1,0 +1,9 @@
+streamlit
+streamlit_chat
+numpy
+pandas
+matplotlib
+langchain
+openai
+beautifulsoup4
+streamlit_chat
