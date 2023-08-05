@@ -19,11 +19,11 @@ from urllib.parse import urlparse
 
 def init_page():
     st.set_page_config(
-        page_title="Website Summarizer",
+        page_title="同期勉強会 Web記事要約サイト",
         page_icon="🤗"
     )
-    st.header("Website Summarizer 🤗")
-    st.sidebar.title("Options")
+    st.header("同期勉強会 Web記事要約サイト 🤗")
+    st.sidebar.title("設定")
 
 
 def init_messages():
@@ -36,7 +36,7 @@ def init_messages():
 
 
 def select_model():
-    model = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-3.5-16k"))
+    model = st.sidebar.radio("モデルを選んでね！:", ("GPT-3.5", "GPT-3.5-16k"))
     if model == "GPT-3.5":
         model_name = "gpt-3.5-turbo"
     else:
@@ -130,15 +130,15 @@ def main():
 
     if answer:
         with response_container:
-            st.markdown("## Summary")
+            st.markdown("## 要約")
             st.write(answer)
             st.markdown("---")
-            st.markdown("## Original Text")
+            st.markdown("## 原文はこちら！")
             st.write(content)
 
-    costs = st.session_state.get('costs', [])
-    st.sidebar.markdown("## Costs")
-    st.sidebar.markdown(f"**Total cost: ${sum(costs):.5f}**")
+    costs = st.session_state.get('いくらかかりました', [])
+    st.sidebar.markdown("## 料金")
+    st.sidebar.markdown(f"**総額: ${sum(costs):.5f}**")
     for cost in costs:
         st.sidebar.markdown(f"- ${cost:.5f}")
 
