@@ -138,7 +138,7 @@ def main():
 
     costs = st.session_state.get('いくらかかりました', [])
     st.sidebar.markdown("## 料金")
-    st.sidebar.markdown(f"**総額: ${sum(costs):.5f}**")
+    st.sidebar.markdown(f"**金額: ${sum(costs):.5f}**")
     for cost in costs:
         st.sidebar.markdown(f"- ${cost:.5f}")
 
